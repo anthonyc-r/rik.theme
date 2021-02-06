@@ -8,25 +8,39 @@ NSString * const kRikPulseProgressKey = @"kRikPulseProgressKey";
 @implementation NSButtonCell(RikDefaultButtonAnimation)
 - (void)setIsDefaultButton:(NSNumber*) val
 {
+#ifdef __clang__
   objc_setAssociatedObject(self, kRikIsDefaultButton, val, OBJC_ASSOCIATION_COPY);
+#endif
 }
 
 - (NSNumber *) isDefaultButton
 {
+#ifdef __clang__
 	return objc_getAssociatedObject(self, kRikIsDefaultButton);
+#else
+	return nil;
+#endif
 }
+
 - (BOOL)defaultButton
 {
-	return [[self isDefaultButton] boolValue];
+  return [[self isDefaultButton] boolValue];
 }
+
 - (void)setPulseProgress:(NSNumber *)pulseProgress
 {
+#ifdef __clang__
 	objc_setAssociatedObject(self, kRikPulseProgressKey, pulseProgress, OBJC_ASSOCIATION_COPY);
+#endif
 }
 
 - (NSNumber*)pulseProgress
 {
-	return objc_getAssociatedObject(self, kRikPulseProgressKey);
+#ifdef __clang__
+  return objc_getAssociatedObject(self, kRikPulseProgressKey);
+#else
+  return [NSNumber numberWithInteger: 0];
+#endif
 }
 @end
 

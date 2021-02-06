@@ -10,7 +10,7 @@
 }
 - (void) drawBezelWithFrame: (NSRect)cellFrame inView: (NSView *)controlView
 {
-  GSThemeControlState buttonState = [self themeControlState];
+  GSThemeControlState buttonState = (GSThemeControlState)[self themeControlState];
   NSBezierPath * path = [self pathForFrame: cellFrame];
   [(Rik*)[GSTheme theme] drawPathButton: path
                                in: self

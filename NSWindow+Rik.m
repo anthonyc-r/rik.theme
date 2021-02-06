@@ -50,7 +50,7 @@
 }
 
 @property (retain) NSButtonCell * buttoncell;
-@property (retain) NSAnimation * animation;
+@property (retain) DefaultButtonAnimation * animation;
 
 @end
 @implementation DefaultButtonAnimationController
