@@ -31,18 +31,23 @@
       gradientUpColor1, 0.1,
       gradientUpColor2, 0.3,
       gradientUpColor3, 1.0, nil];
+  AUTORELEASE(gradientUp);
   NSGradient* gradientDown = [[NSGradient alloc] initWithColorsAndLocations:
       gradientDownColor1, 0.0,
       gradientDownColor2, 1.0, nil];
+  AUTORELEASE(gradientDown);
   NSGradient* baseGradient = [[NSGradient alloc] initWithColorsAndLocations:
       bc, 0.0,
       shadowColor1, 0.80, nil];
+  AUTORELEASE(baseGradient);
   NSGradient* gradientStroke = [[NSGradient alloc] initWithColorsAndLocations:
       light1, 0.2,
       light2, 1.0, nil];
+  AUTORELEASE(gradientStroke);
   NSGradient* gradientStroke2 = [[NSGradient alloc] initWithColorsAndLocations:
       shadowColor2, 0.47,
       gradientStrokeColor2, 1.0, nil];
+  AUTORELEASE(gradientStroke2);
 
 //paintcode stuff...
   NSRect baseCircleGradientStrokeRect = frame;

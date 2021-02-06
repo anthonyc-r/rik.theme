@@ -65,12 +65,15 @@
   NSGradient* lightGradient = [[NSGradient alloc] initWithColorsAndLocations:
       clearColor, 0.0,
       whiteColor, 0.97, nil];
+  AUTORELEASE(lightGradient);
   NSGradient* bezelBorderGradient = [[NSGradient alloc] initWithColorsAndLocations:
       strokeBaseColor, 1.0,
       strokeLightColor, 0.5, nil];
+  AUTORELEASE(bezelBorderGradient);
   NSGradient* fillGradient = [[NSGradient alloc] initWithColorsAndLocations:
       [strokeBaseColor highlightWithLevel: 0.7], 0.0,
       [NSColor whiteColor], 0.2, nil];
+  AUTORELEASE(fillGradient);
 
 	NSRect rect = cellFrame;
 	CGFloat radius = rect.size.height / 2.0;

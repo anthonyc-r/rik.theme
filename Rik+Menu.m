@@ -148,6 +148,7 @@
   NSColor* menuItemBackground = [self menuItemBackgroundColor];
   NSGradient* menuitemgradient = [[NSGradient alloc] initWithStartingColor: selectedBackgroundColor1
                                                                endingColor: selectedBackgroundColor2];
+  AUTORELEASE(menuitemgradient);
   NSColor * c;
   [cell setBordered:NO];
   cellFrame = [cell drawingRectForBounds: cellFrame];

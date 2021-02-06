@@ -54,6 +54,7 @@
           white, 0.1,
           baseColor, 0.18, nil];
 	    }
+    AUTORELEASE(fill);
 //	  aRect = NSInsetRect(aRect, 2.0, 2.0);
 	  //NSRectFill(NSIntersectionRect(aRect, clipRect));
     [fill drawInRect: NSIntersectionRect(aRect, clipRect) angle: -90];

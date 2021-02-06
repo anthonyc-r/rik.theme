@@ -22,6 +22,7 @@
       buttonFill, 0.0,
       buttonFill, 0.64,
       buttonFillLight, 1.0, nil];
+    AUTORELEASE(buttonGradient);
 
     CGFloat button2CornerRadius = 4;
     NSRect button2Rect = cellFrame;

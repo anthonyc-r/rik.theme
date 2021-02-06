@@ -32,9 +32,11 @@
 
       //// Gradient Declarations
       NSGradient* strokeGradient = [[NSGradient alloc] initWithStartingColor: strokeDark endingColor: strokeLight];
+      AUTORELEASE(strokeGradient);
       NSGradient* fillGradient = [[NSGradient alloc] initWithColorsAndLocations:
           strokeDark2, 0.0,
           strokeLight2, 1.0, nil];
+      AUTORELEASE(fillGradient);
       int w,h,a,x,y;
       if(horizontal)
       {

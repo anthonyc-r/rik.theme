@@ -179,7 +179,7 @@ static NSImage *spinningImages[MaxCount];
       saturate, 0.55, 
       lightColor2, 1.0, nil];
 
-
+  AUTORELEASE(progressbarGradient);
   //// fullrectange Drawing
   NSBezierPath* fullrectangePath = [NSBezierPath bezierPathWithRoundedRect:bounds  xRadius: 3 yRadius: 3];
 

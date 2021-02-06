@@ -292,6 +292,7 @@ NSString * const kRikPulseProgressKey = @"kRikPulseProgressKey";
   NSGradient* buttonBackgroundGradient = [[NSGradient alloc] initWithColorsAndLocations:
       baseColorLight, 1.0,
       baseColor, 0.0, nil];
+  AUTORELEASE(buttonBackgroundGradient);
   CGFloat roundedRectangleStrokeWidth = 1;
   NSBezierPath* roundedRectanglePath = [NSBezierPath bezierPathWithRoundedRect: rect xRadius: 3 yRadius: 3];
   [buttonBackgroundGradient drawInBezierPath: roundedRectanglePath angle: -90];
@@ -313,6 +314,7 @@ NSString * const kRikPulseProgressKey = @"kRikPulseProgressKey";
   NSGradient* buttonBackgroundGradient = [[NSGradient alloc] initWithColorsAndLocations:
       baseColorLight, 1.0,
       baseColor, 0.0, nil];
+  AUTORELEASE(buttonBackgroundGradient);
   CGFloat roundedRectangleStrokeWidth = 1;
   NSBezierPath* roundedRectanglePath = [NSBezierPath bezierPathWithRect: border];
   [buttonBackgroundGradient drawInBezierPath: roundedRectanglePath angle: -90];

@@ -189,6 +189,7 @@ static NSDictionary *titleTextAttributes[3] = {nil, nil, nil};
   mainColor = normalColor;
   keyColor = normalColor;
 
+  RELEASE(titleTextAttributes[0]);
   titleTextAttributes[0] = [[NSMutableDictionary alloc]
     initWithObjectsAndKeys:
       [NSFont titleBarFontOfSize: 0], NSFontAttributeName,
@@ -196,6 +197,7 @@ static NSDictionary *titleTextAttributes[3] = {nil, nil, nil};
       p, NSParagraphStyleAttributeName,
       nil];
 
+  RELEASE(titleTextAttributes[1]);
   titleTextAttributes[1] = [[NSMutableDictionary alloc]
     initWithObjectsAndKeys:
     [NSFont titleBarFontOfSize: 0], NSFontAttributeName,
@@ -203,6 +205,7 @@ static NSDictionary *titleTextAttributes[3] = {nil, nil, nil};
     p, NSParagraphStyleAttributeName,
     nil];
 
+  RELEASE(titleTextAttributes[2]);
   titleTextAttributes[2] = [[NSMutableDictionary alloc]
     initWithObjectsAndKeys:
     [NSFont titleBarFontOfSize: 0], NSFontAttributeName,

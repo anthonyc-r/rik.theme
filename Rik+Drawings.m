@@ -33,6 +33,7 @@ NSRoundRectFill(NSRect r, float radius)
       baseColor, 0.49,
       baseColorLight2, 0.50,
       nil];
+  AUTORELEASE(gradient);
   return gradient;
 }
 - (NSGradient *) _buttonGradientWithColor:(NSColor*) baseColor
@@ -43,13 +44,14 @@ NSRoundRectFill(NSRect r, float radius)
   NSColor* baseColorLight2 = [baseColor highlightWithLevel: 0.5];
   NSColor* baseColorShadow = [baseColor shadowWithLevel: 0.1];
 
-  return [[NSGradient alloc] initWithColorsAndLocations:
+  NSGradient* gradient = [[NSGradient alloc] initWithColorsAndLocations:
                                             baseColorLight, 0.0,
                                             baseColor, 0.30,
                                             baseColor, 0.49,
                                             baseColorLight2, 0.50,
                                             nil];
-
+  AUTORELEASE(gradient);
+  return gradient;
 }
 
 - (NSGradient *) _windowTitlebarGradient
@@ -63,8 +65,10 @@ NSRoundRectFill(NSRect r, float radius)
                                                        blue: 0.667
                                                       alpha: 1];
 
-  return [[NSGradient alloc] initWithStartingColor: gradientColor1
+  NSGradient* gradient = [[NSGradient alloc] initWithStartingColor: gradientColor1
                                        endingColor: gradientColor2];
+  AUTORELEASE(gradient);
+  return gradient;
 }
 
 
@@ -77,12 +81,13 @@ NSRoundRectFill(NSRect r, float radius)
   NSColor* strokeColorLight2 = [NSColor colorWithCalibratedRed: 0.8 green: 0.8 blue: 0.8 alpha: 1];//[strokeColor highlightWithLevel: 0.3];
   NSColor* strokeColorLight3 = [NSColor colorWithCalibratedRed: 0.8 green: 0.8 blue: 0.8 alpha: 0];//[strokeColor highlightWithLevel: 0.3];
   NSGradient* gradient = [[NSGradient alloc] initWithStartingColor: strokeColorLight endingColor: strokeColorLight2];
+  AUTORELEASE(gradient);
   // THIS SHOULD BE THE BACKGROUND COLOR
   NSColor * whiteColor = [NSColor whiteColor];
   NSGradient* gradient2 = [[NSGradient alloc] initWithColorsAndLocations: strokeColorLight2, 0.0,
                                                                           strokeColorLight3, 0.30,
                                                                           nil];
-
+  AUTORELEASE(gradient2);
 
   //// Rectangle 2 Drawing
   [gradient drawInRect: border angle: 90];
@@ -112,6 +117,7 @@ NSRoundRectFill(NSRect r, float radius)
       strokeDark, 0.0,
       [NSColor colorWithCalibratedRed: 0.761 green: 0.761 blue: 0.761 alpha: 1], 0.82,
       strokeLight, 1.0, nil];
+  AUTORELEASE(strokeGradient);
 
   //// Frames
   NSRect strokeRect = NSMakeRect(NSMinX(border), NSMinY(border), NSWidth(border), NSHeight(border));
@@ -157,7 +163,7 @@ NSRoundRectFill(NSRect r, float radius)
       emptyLight2, 0.54,
       emptyLight, 0.81,
       emptyColor, 1.0, nil];
-
+  AUTORELEASE(emptyGradient);
 
   NSRect borderRect = NSMakeRect(
       NSMinX(border) + 0.5,
@@ -188,6 +194,7 @@ NSRoundRectFill(NSRect r, float radius)
       strokeDark, 0.0,
       [NSColor colorWithCalibratedRed: 0.761 green: 0.761 blue: 0.761 alpha: 1], 0.82,
       strokeLight, 1.0, nil];
+  AUTORELEASE(strokeGradient);
 
   //// Frames
   NSRect strokeRect = NSMakeRect(NSMinX(border), NSMinY(border), NSWidth(border), NSHeight(border));

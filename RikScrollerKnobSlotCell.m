@@ -24,6 +24,7 @@
       baseColor, 0.3,
       shadowColor, 0.0,
       nil];
+  AUTORELEASE(gr);
   int a = 0;
   if(horizontal)
     a = 90;
